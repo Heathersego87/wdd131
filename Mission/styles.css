@@ -1,34 +1,33 @@
-/* Base styling */
+/* General page styles */
 body {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 20px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
 }
 
-/* Keep main content narrow and left-aligned */
-main {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 20px;
+/* Header styles */
+header {
+  margin-bottom: 20px;
 }
 
-/* Headings */
-h1, h2 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0.5em 0;
+/* Footer styles */
+footer {
+  margin-top: 40px;
+  text-align: center;
 }
 
-h2 {
-    color: #006EB6; /* BYU–I blue */
-}
-
-/* Footer logo */
 footer img {
-    width: 150px;
-    margin-top: 20px;
+  width: 150px;
+  margin-top: 20px;
+}
+
+/* Dark theme base */
+.dark {
+  background-color: #333;
+  color: white;
+}
+
+/* Fix subtitle (h2) inside dark theme */
+.dark h2 {
+  color: #006EB6; /* high-contrast BYU blue */
 }
