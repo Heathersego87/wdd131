@@ -7,7 +7,7 @@
   --secondary-color: #59c3c3;
   --accent-color: white;
   --text-dark: black;
-  --text-light:#ebebeb;
+  --text-light: #ebebeb;
   --primary-font: Arial, Helvetica, sans-serif;
   --secondary-font: 'Mooli', sans-serif;
 }
@@ -38,6 +38,27 @@ header, footer {
   color: var(--text-light);
   padding: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;  /* logo stacked above nav/menu */
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* space between text and camera */
+}
+
+.logo h1 {
+  font-family: var(--secondary-font);
+  margin: 0;
 }
 
 /* Menu button (mobile-first) */
@@ -61,26 +82,41 @@ nav a {
   padding: 0.5rem;
 }
 
+/* Gallery */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 3rem;
   padding: 1rem;
-  justify-content: center;  /* centers the whole grid */
-  justify-items: center;    /* centers each image in its cell */
+  justify-content: center;   /* centers the whole grid */
+  justify-items: center;     /* centers each image in its cell */
   max-width: 800px;
-  margin: 0 auto;           /* centers the gallery block itself */
+  margin: 0 auto;            /* centers the gallery block */
 }
 
 .gallery img {
   width: 220px;
   height: 220px;
-  object-fit: cover;     /* keep square crop */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* optional */
+  object-fit: cover;   /* keep square crop */
+  display: block;
+  margin: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
-/* Footer */
-footer {
-  margin-top: 2rem;
+
+/* Figure cards */
+figure {
+  background: white;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Section headings */
+main h2 {
+  text-align: center;
 }
 
 /* Medium screens (~700px) */
@@ -92,17 +128,12 @@ footer {
 
 /* Large screens (~1000px) */
 @media (min-width: 1000px) {
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-  }
-
   /* Nav links go horizontal */
   nav {
     display: flex;
-    gap: 10rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10rem;  /* large spacing between links */
     margin: 0;
   }
 
@@ -120,43 +151,4 @@ footer {
   .gallery {
     grid-template-columns: 1fr 1fr 1fr;
   }
-
-.logo h1 {
-  font-family: var(--secondary-font);
-  margin: 0;
-}
-/* Center the logo inside the header */
-header {
-  display: flex;
-  justify-content: center; /* center logo horizontally */
-  align-items: center;     /* center vertically */
-  flex-direction: column;  /* stack menu/nav below on mobile */
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem; /* space between text and camera */
-}
-main h2 {
-  text-align: center;
-}
-.gallery img {
-  width: 220px;   /* smaller than before */
-  height: 220px;
-  object-fit: cover;
-  display: block;
-  margin: auto;
-}
-
-/* Add this */
-figure {
-  background: white;         
-  padding: 0.5rem;           
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  margin: 0;                 
-  display: flex;
-  justify-content: center;   
-  align-items: center;
 }
