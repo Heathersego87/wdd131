@@ -1,0 +1,162 @@
+/* Import headline font */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* CSS Variables */
+:root {
+  --primary-color: #52489c;
+  --secondary-color: #59c3c3;
+  --accent-color: white;
+  --text-dark: black;
+  --text-light:#ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: 'Mooli', sans-serif;
+}
+
+/* Global styles */
+body {
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+  margin: 0;
+  color: var(--text-dark);
+  background-color: rgb(219, 214, 214);
+}
+
+h1, h2 {
+  font-family: var(--secondary-font);
+  margin: 0.5rem 0;
+}
+
+a:link,
+a:visited {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* Header + Footer */
+header, footer {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Menu button (mobile-first) */
+#menu {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* Nav hidden by default (mobile-first) */
+nav {
+  display: none;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+  padding: 1rem;
+  justify-content: center;  /* centers the whole grid */
+  justify-items: center;    /* centers each image in its cell */
+  max-width: 800px;
+  margin: 0 auto;           /* centers the gallery block itself */
+}
+
+.gallery img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;     /* keep square crop */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* optional */
+}
+/* Footer */
+footer {
+  margin-top: 2rem;
+}
+
+/* Medium screens (~700px) */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+  }
+}
+
+/* Large screens (~1000px) */
+@media (min-width: 1000px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  /* Nav links go horizontal */
+  nav {
+    display: flex;
+    gap: 10rem;
+    margin: 0;
+  }
+
+  nav a {
+    display: inline;
+    padding: 0;
+  }
+
+  /* Menu button hidden on wide screens */
+  #menu {
+    display: none;
+  }
+
+  /* Gallery goes to 3 columns */
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+.logo h1 {
+  font-family: var(--secondary-font);
+  margin: 0;
+}
+/* Center the logo inside the header */
+header {
+  display: flex;
+  justify-content: center; /* center logo horizontally */
+  align-items: center;     /* center vertically */
+  flex-direction: column;  /* stack menu/nav below on mobile */
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* space between text and camera */
+}
+main h2 {
+  text-align: center;
+}
+.gallery img {
+  width: 220px;   /* smaller than before */
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+/* Add this */
+figure {
+  background: white;         
+  padding: 0.5rem;           
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 0;                 
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+}
