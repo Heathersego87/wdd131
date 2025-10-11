@@ -21,6 +21,11 @@ body {
   background-color: rgb(219, 214, 214);
 }
 
+/* Hide class for JS toggle */
+.hide {
+  display: none;
+}
+
 h1, h2 {
   font-family: var(--secondary-font);
   margin: 0.5rem 0;
@@ -151,4 +156,33 @@ main h2 {
   .gallery {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+/* ===== Modal / Dialog Styles ===== */
+dialog {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  padding: 0;
+  z-index: 10;
+}
+
+dialog img {
+  display: block;
+  margin: 20vh auto;
+  width: 90%;
+  max-height: 100%;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 20vh;
+  right: 5vw;
+  font-size: 1.5rem;
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
 }
