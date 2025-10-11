@@ -1,36 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Cool Pics - A responsive photo gallery project" />
   <meta name="author" content="Heather Sego" />
   <title>Cool Pics 📷</title>
+
   <link rel="stylesheet" href="coolpics.css" />
-  <!-- Only need this once, defer makes sure it runs after the DOM loads -->
   <script src="coolpics.js" defer></script>
 </head>
+
 <body>
   <header>
-    <div class="logo">
-      <h1>Cool Pics</h1>
-      <span>📷</span>
-    </div>
+  <div class="logo">
+    <h1>Cool Pics</h1>
+    <span>📷</span>
+  </div>
 
-    <button id="menu">Menu</button>
+  <button id="menu">Menu</button>
 
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">People</a>
-      <a href="#">Places</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+  <!-- ✅ Important: nav starts hidden -->
+  <nav class="hide">
+    <a href="#">Home</a>
+    <a href="#">People</a>
+    <a href="#">Places</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
   <main>
     <h2>Current Work</h2>
     <section class="gallery">
+      <!-- ✅ Make sure you have both -sm.jpeg and -full.jpeg versions in your folder -->
       <figure><img src="norris-sm.jpeg" alt="picture of Norris Geyser Basin"></figure>
       <figure><img src="norris-sm.jpeg" alt="picture of Norris Geyser Basin"></figure>
       <figure><img src="norris-sm.jpeg" alt="picture of Norris Geyser Basin"></figure>
