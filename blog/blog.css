@@ -1,105 +1,139 @@
+/* blog.css */
+
+/* ---------- Base Styles ---------- */
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  color: #473144;
-  background-color: #fff;
+  font-family: "Georgia", serif;
+  color: #333;
+  background-color: #fffaf9;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
-/* Header and Title */
 h1 {
-  font-family: "Lora", serif;
   text-align: center;
-  font-size: 2rem;
+  color: #3c1f4a;
+  font-size: 2em;
   margin-top: 1rem;
-  color: #473144;
 }
 
-/* Navigation */
+/* ---------- Header and Nav ---------- */
+header {
+  text-align: center;
+  border-bottom: 2px solid #d7a98c;
+  padding-bottom: 0.5rem;
+}
+
 nav ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  justify-content: end;
-  justify-items: end;
+  list-style-type: none;
   padding: 0;
-  border-top: 2px solid #efc69b;
-  border-bottom: 2px solid #efc69b;
-  margin: 1rem auto;
-  max-width: 800px;
+  margin: 0.5rem 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
 }
 
 nav a {
-  text-decoration: none;
-  color: #af1b3f;
+  color: #a0203a;
   font-weight: bold;
-  font-size: 1.1rem;
+  text-decoration: none;
 }
 
-/* Layout */
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Main Layout ---------- */
 main {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   gap: 2rem;
-  max-width: 1000px;
   margin: 2rem auto;
+  max-width: 1000px;
   padding: 0 1rem;
 }
 
-/* Articles */
-article {
+/* ---------- Article Styling ---------- */
+.articles article {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  border-bottom: 1px solid #efc69b;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  grid-template-columns: 1fr 3fr;
+  border-bottom: 1px solid #d7a98c;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .details {
   text-align: right;
-  padding-right: 1rem;
-  color: #473144;
+  color: #555;
   font-size: 0.9rem;
+  padding-right: 1rem;
+  border-right: 2px solid #d7a98c;
+}
+
+.content {
+  padding-left: 1.5rem;
 }
 
 .content h2 {
-  color: #af1b3f;
-  margin: 0;
+  color: #a0203a;
+  margin-top: 0;
 }
 
 .content img {
-  width: 200px;
   display: block;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
+  max-width: 200px;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+.content p {
+  margin-top: 0.5rem;
 }
 
 .content a {
-  color: #af1b3f;
-  text-decoration: none;
+  color: #a0203a;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .content a:hover {
   text-decoration: underline;
 }
 
-/* Filters box */
+/* ---------- Sidebar ---------- */
 .filters {
-  border: 1px solid #efc69b;
+  border: 1px solid #d7a98c;
   padding: 1rem;
+  background-color: #fff;
 }
 
-/* Skip link */
+/* ---------- Skip Link ---------- */
 .skiptocontent a {
   position: absolute;
-  top: -40px;
-  left: 0;
-  background: #af1b3f;
-  color: white;
-  padding: 8px;
-  text-decoration: none;
+  left: -999px;
 }
 
 .skiptocontent a:focus {
-  top: 0;
+  position: static;
+  background-color: #f8d7da;
+  padding: 0.5rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #3c1f4a;
+  color: white;
+}
+footer {
+  text-align: center;
+  background-color: #3c1f4a;
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
 }
