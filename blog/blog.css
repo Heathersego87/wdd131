@@ -1,0 +1,139 @@
+/* blog.css */
+
+/* ---------- Base Styles ---------- */
+body {
+  font-family: "Georgia", serif;
+  color: #333;
+  background-color: #fffaf9;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  color: #3c1f4a;
+  font-size: 2em;
+  margin-top: 1rem;
+}
+
+/* ---------- Header and Nav ---------- */
+header {
+  text-align: center;
+  border-bottom: 2px solid #d7a98c;
+  padding-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav a {
+  color: #a0203a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Main Layout ---------- */
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+/* ---------- Article Styling ---------- */
+.articles article {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border-bottom: 1px solid #d7a98c;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.details {
+  text-align: right;
+  color: #555;
+  font-size: 0.9rem;
+  padding-right: 1rem;
+  border-right: 2px solid #d7a98c;
+}
+
+.content {
+  padding-left: 1.5rem;
+}
+
+.content h2 {
+  color: #a0203a;
+  margin-top: 0;
+}
+
+.content img {
+  display: block;
+  margin: 0.5rem 0;
+  max-width: 200px;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+.content p {
+  margin-top: 0.5rem;
+}
+
+.content a {
+  color: #a0203a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Sidebar ---------- */
+.filters {
+  border: 1px solid #d7a98c;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+/* ---------- Skip Link ---------- */
+.skiptocontent a {
+  position: absolute;
+  left: -999px;
+}
+
+.skiptocontent a:focus {
+  position: static;
+  background-color: #f8d7da;
+  padding: 0.5rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #3c1f4a;
+  color: white;
+}
+footer {
+  text-align: center;
+  background-color: #3c1f4a;
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}

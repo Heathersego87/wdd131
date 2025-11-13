@@ -1,0 +1,68 @@
+// blog.js
+
+//Create an array of article objects
+const articles = [
+  {
+    id: 1,
+    title: "Septimus Heap Book One: Magyk",
+    date: "July 5, 2022",
+    description:
+      "If you enjoy stories about seventh sons of seventh sons and magyk, this is the book for you.",
+    imgSrc: "images/magyk.jpg",
+    imgAlt: "Book cover for Septimus Heap 1",
+    ages: "10–14",
+    genre: "Fantasy",
+    stars: "★★★★"
+  },
+  {
+    id: 2,
+    title: "Magnus Chase Book One: Sword of Summer",
+    date: "December 12, 2021",
+    description:
+      "If you like Norse mythology and fast-paced adventures, this one’s a must-read.",
+    imgSrc: "images/magnus.jpg",
+    imgAlt: "Book cover for Magnus Chase 1",
+    ages: "12–16",
+    genre: "Fantasy",
+    stars: "★★★★★"
+  },
+  {
+    id: 3,
+    title: "Belgariad Book One: Pawn of Prophecy",
+    date: "Feb 12, 2022",
+    description:
+      "A fierce dispute among the Gods and the theft of a powerful Orb leaves the world divided into five kingdoms. Young Garion, with his 'Aunt Pol' and an elderly man calling himself Wolf—a father and daughter granted near-immortality by one of the Gods—set out on a complex mission.",
+    imgSrc: "images/pawn.jpg",
+    imgAlt: "Book cover for Pawn of Prophecy",
+    ages: "12–16",
+    genre: "Fantasy",
+    stars: "★★★★★"
+  }
+];
+
+//Get a reference to the container for the articles
+const articleSection = document.querySelector(".articles");
+
+//Loop through each article and build its HTML dynamically
+articles.forEach(article => {
+  // Create an article element
+  const articleElement = document.createElement("article");
+
+  // Build the inner HTML for this article
+  articleElement.innerHTML = `
+    <div class="details">
+      <p>${article.date}</p>
+      <p>${article.ages}</p>
+      <p>${article.genre}</p>
+      <p>${article.stars}</p>
+    </div>
+    <div class="content">
+      <h2>${article.title}</h2>
+      <img src="${article.imgSrc}" alt="${article.imgAlt}">
+      <p>${article.description} <a href="#">Read More...</a></p>
+    </div>
+  `;
+
+  // Append the new article to the section
+  articleSection.appendChild(articleElement);
+});
