@@ -1,55 +1,96 @@
+// IMPORT RECIPES
 import { recipes } from "./recipes.mjs";
 
-const recipeList = document.querySelector("#recipes");
-const searchForm = document.querySelector("#searchForm");
-const searchInput = document.querySelector("#searchInput");
+function ratingTemplate(rating) {
+  let stars = "";
+  for (let i = 1; i <= 5; i++) {
+    stars += i <= rating
+      ? `<span aria-hidden="true" class="icon-star">⭐</span>`
+      : `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
+  }
 
-displayRecipes(recipes);
+  return `
+    <span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">
+      ${stars}
+    </span>
+  `;
+}
 
-function displayRecipes(recipeArray) {
-  recipeList.innerHTML = "";
+function tagTemplate(tags) {
+  return `
+    <div class="tags">
+      ${tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+    </div>
+  `;
+}
 
-  recipeArray.forEach((recipe) => {
-    const card = document.createElement("div");
-    card.classList.add("recipe-card");
-
-    const stars = buildStars(recipe.rating);
-
-    card.innerHTML = `
+function recipeTemplate(recipe) {
+  return `
+    <article class="recipe-card">
       <img src="images/${recipe.image}" alt="${recipe.name}" />
 
       <div class="recipe-info">
         <h2>${recipe.name}</h2>
 
-        <span class="rating" role="img" aria-label="Rating: ${recipe.rating} out of 5 stars">
-          ${stars}
-        </span>
+        ${ratingTemplate(recipe.rating)}
+        ${tagTemplate(recipe.tags)}
 
         <p class="recipe-description">${recipe.description}</p>
-      </div>
-    `;
 
-    recipeList.appendChild(card);
+        <h3>Ingredients</h3>
+        <ul>
+          ${recipe.ingredients.map(item => `<li>${item}</li>`).join("")}
+        </ul>
+
+        <h3>Instructions</h3>
+        <ol>
+          ${recipe.instructions.map(step => `<li>${step}</li>`).join("")}
+        </ol>
+      </div>
+    </article>
+  `;
+}
+
+function renderRecipes(recipeArray) {
+  const recipeList = document.querySelector("#recipes");
+  recipeList.innerHTML = "";
+
+  if (recipeArray.length === 0) {
+    recipeList.innerHTML = "<p>No recipes found.</p>";
+    return;
+  }
+
+  recipeArray.forEach(recipe => {
+    recipeList.innerHTML += recipeTemplate(recipe);
   });
 }
 
-function buildStars(rating) {
-  let starHTML = "";
-  for (let i = 1; i <= 5; i++) {
-    starHTML += i <= rating
-      ? `<span aria-hidden="true" class="icon-star">⭐</span>`
-      : `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
-  }
-  return starHTML;
+function renderRandomRecipe() {
+  const randomIndex = Math.floor(Math.random() * recipes.length);
+  const randomRecipe = recipes[randomIndex];
+  renderRecipes([randomRecipe]);
 }
 
-searchForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const query = searchInput.value.toLowerCase().trim();
+function filterRecipes(query) {
+  query = query.toLowerCase();
 
-  const filtered = recipes.filter((recipe) =>
-    recipe.name.toLowerCase().includes(query)
+  return recipes.filter(recipe =>
+    recipe.name.toLowerCase().includes(query) ||
+    recipe.tags.some(tag => tag.toLowerCase().includes(query))
   );
+}
 
-  displayRecipes(filtered);
+document.querySelector("#searchForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const searchInput = document.querySelector("#searchInput").value.trim().toLowerCase();
+  const filtered = filterRecipes(searchInput);
+
+  if (searchInput === "") {
+    renderRandomRecipe();  // if empty search → random recipe
+  } else {
+    renderRecipes(filtered);
+  }
 });
+
+renderRandomRecipe();
