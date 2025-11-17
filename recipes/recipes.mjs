@@ -89,7 +89,6 @@ export const recipes = [
       "Bake for 10–12 minutes."
     ]
   },
-
   {
     name: "Sweet Potato Waffle",
     image: "sweet-potato-waffle-md.jpg",

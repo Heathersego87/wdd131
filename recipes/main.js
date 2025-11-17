@@ -16,7 +16,10 @@ function ratingTemplate(rating) {
   `;
 }
 
-function tagTemplate(tags) {
+// ⭐ SAFER TAG TEMPLATE — prevents undefined
+function tagTemplate(tags = []) {
+  if (!tags || tags.length === 0) return "";
+
   return `
     <div class="tags">
       ${tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
@@ -33,7 +36,9 @@ function recipeTemplate(recipe) {
         <h2>${recipe.name}</h2>
 
         ${ratingTemplate(recipe.rating)}
-        ${tagTemplate(recipe.tags)}
+
+        <!-- ⭐ Prevent undefined tags -->
+        ${recipe.tags ? tagTemplate(recipe.tags) : ""}
 
         <p class="recipe-description">${recipe.description}</p>
 
@@ -87,7 +92,7 @@ document.querySelector("#searchForm").addEventListener("submit", (e) => {
   const filtered = filterRecipes(searchInput);
 
   if (searchInput === "") {
-    renderRandomRecipe();  // if empty search → random recipe
+    renderRandomRecipe();  // empty search → random recipe
   } else {
     renderRecipes(filtered);
   }
