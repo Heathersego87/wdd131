@@ -2,30 +2,37 @@
 // PRACTICE TRACKER SCRIPT
 // ======================================
 
-// State
-let practiceMinutes = 0;
+// User stats object (Required for assignment)
+const userStats = {
+  name: "Student",
+  minutesToday: 0,
+  totalMinutes: 0
+};
 
 // DOM Elements
 const display = document.querySelector("#practice-display");
 const addFiveBtn = document.querySelector("#add-5");
 const resetBtn = document.querySelector("#reset");
 
-// Update function
+// Update Display Function
 function updateDisplay() {
-  display.innerHTML = `You've practiced <strong>${practiceMinutes}</strong> minutes today!`;
+  display.innerHTML = `
+    You've practiced <strong>${userStats.minutesToday}</strong> minutes today!
+  `;
 }
 
-// Add practice minutes
+// Add 5 Minutes Event
 addFiveBtn.addEventListener("click", () => {
-  practiceMinutes += 5;
+  userStats.minutesToday += 5;
+  userStats.totalMinutes += 5;
   updateDisplay();
 });
 
-// Reset tracker
+// Reset Event
 resetBtn.addEventListener("click", () => {
-  practiceMinutes = 0;
+  userStats.minutesToday = 0;
   updateDisplay();
 });
 
-// Initial load
+// Initialize Display
 updateDisplay();

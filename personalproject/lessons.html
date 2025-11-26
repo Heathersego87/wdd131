@@ -5,18 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beginner Piano Lessons | The Music Mogul</title>
 
-  <!-- Google Fonts -->
+  <!-- Performance: minimal connections -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/main.css" />
-  <meta name="description" content="The Music Mogul – Fun, beginner-friendly piano lessons for kids, teens, and homeschool families. Learn piano through colorful visuals, tips, and interactive tools.">
-<meta name="theme-color" content="#FF6EC7">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <meta name="description" content="Fun and colorful beginner piano lessons for kids and new musicians.">
 </head>
 
 <body>
@@ -24,7 +23,13 @@
   <!-- HEADER -->
   <header>
     <div class="logo-area">
-      <img src="images/music-mogul-logo.png" alt="Heather Sego Music Mogul Logo">
+      <img 
+        src="images/music-mogul-logo.webp" 
+        alt="Music Mogul logo"
+        width="130"
+        height="130"
+        decoding="async"
+      >
       <h1>The Music Mogul</h1>
     </div>
 
@@ -37,36 +42,41 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main class="lesson-wrapper">
 
+    <!-- INTRO -->
     <section class="lesson-intro">
       <h2>Beginner Piano Lessons</h2>
-      <p>
-        Welcome to your first step in learning piano! These starter lessons are simple, fun, and designed to help you play real music fast. Each lesson builds confidence and teaches you key skills every new musician needs.
-      </p>
+      <p>Simple, fun lessons that help you start playing real songs fast.</p>
 
-      <img src="images/lesson-hero.png" 
-     alt="Colorful beginner piano lesson graphic" 
-     width="1200" height="600"
-     loading="lazy">
+      <img 
+        src="images/lesson-hero.webp"
+        alt="Beginner piano graphic"
+        width="900"
+        height="450"
+        loading="lazy"
+        decoding="async"
+      >
     </section>
 
     <!-- LESSON LIST -->
     <section class="lesson-list">
       <h3>Start Learning:</h3>
-
       <ul>
-        <li>🎹 Lesson 1: Meet the Keyboard</li>
-        <li>🖐️ Lesson 2: Finger Numbers</li>
-        <li>🎵 Lesson 3: Middle C</li>
-        <li>✨ Lesson 4: First Melody</li>
-        <li>⏱️ Lesson 5: Rhythm Basics</li>
-        <li>🎶 Lesson 6: Simple Song Challenge</li>
+        <li>🎹 Meet the Keyboard</li>
+        <li>🖐️ Finger Numbers</li>
+        <li>🎵 Middle C</li>
+        <li>✨ First Melody</li>
+        <li>⏱️ Rhythm Basics</li>
+        <li>🎶 Simple Song Challenge</li>
       </ul>
+
+      <button id="show-easy">Show Easy Lessons</button>
+      <ul id="lesson-output"></ul>
     </section>
 
-    <!-- JAVASCRIPT FEATURE: RANDOM LESSON TIP -->
+    <!-- TIP FEATURE -->
     <section class="tip-box">
       <h3>Need a Practice Tip?</h3>
       <p id="tip-display">Click the button to get a tip!</p>
@@ -80,8 +90,7 @@
     <p>© 2025 The Music Mogul • Created by Heather Sego</p>
   </footer>
 
-  <!-- JS FILE -->
+  <!-- JS -->
   <script type="module" src="scripts/lessons.js"></script>
-
 </body>
 </html>
