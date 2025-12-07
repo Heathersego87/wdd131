@@ -1,0 +1,195 @@
+/* ================================
+   The Music Mogul - Site Plan CSS
+   Updated to match professor template
+================================ */
+
+:root {
+  --primary-color: #396E94;   /* blue */
+  --secondary-color: #E7C24F; /* gold */
+  --accent1-color: #A43312;   /* red line */
+  --accent2-color: #FFFFFF;   /* white */
+
+  --heading-font: "Cinzel", serif;
+  --body-font: "Lato", sans-serif;
+}
+
+/* Page layout */
+body {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 3rem 3rem;
+  font-family: var(--body-font);
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  padding: 3rem;
+  margin-top: 60px;
+  text-align: center;
+  color: white;
+}
+
+header h1,
+header h2 {
+  font-family: var(--heading-font);
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+/* Section Headings */
+h2 {
+  font-family: var(--heading-font);
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* SPECIAL — Overview Title */
+.overview-title {
+  text-align: center;
+  font-family: var(--heading-font);
+  font-size: 1.7rem;
+  color: var(--primary-color);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* h3 headings */
+h3 {
+  font-family: var(--heading-font);
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Horizontal lines */
+hr {
+  border: none;
+  border-top: 4px solid var(--accent1-color);
+  margin: 2rem auto 1rem;
+  width: 100%;
+}
+
+/* REMOVE red line above Navigation */
+.section-divider {
+  display: none;
+}
+
+/* Typography section — matches professor example */
+.colored {
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+
+/* Color palette table */
+.colors {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.colors th,
+.colors td {
+  border: 1px solid #999;
+  padding: 0.75rem;
+}
+
+.colors th {
+  background-color: #bfbfbf;
+}
+
+.colors td:nth-child(1) {
+  background-color: var(--primary-color);
+  color: var(--accent2-color);
+}
+
+.colors td:nth-child(2) {
+  background-color: var(--secondary-color);
+}
+
+.colors td:nth-child(3) {
+  background-color: var(--accent1-color);
+  color: var(--accent2-color);
+}
+
+.colors td:nth-child(4) {
+  background-color: var(--accent2-color);
+}
+
+/* Lists */
+ul {
+  margin-top: 0.25rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+/* Wireframe descriptions */
+.wire-desc {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ===============================
+   NAVIGATION SECTION FIXES
+   Matches professor template EXACTLY
+=============================== */
+
+/* Navigation heading aligned LEFT */
+.navigation-title {
+  text-align: left;
+  margin-left: 0;
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+}
+
+/* Navigation bar (gold bar) */
+.plan-nav {
+  background-color: var(--secondary-color);
+  padding: 1.5rem 1.5rem;
+  margin: 1rem 0 2rem 0;
+  display: block;
+  text-align: left; /* LEFT ALIGN CONTENT */
+}
+
+/* Navigation links aligned left */
+.plan-nav a {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-right: 3rem;
+  font-size: 1.2rem;
+}
+
+.plan-nav a:hover {
+  text-decoration: underline;
+}
+
