@@ -1,3 +1,4 @@
+console.log("✔ lessons.js loaded");
 // =========================================
 // RANDOM LESSON TIP GENERATOR
 // =========================================
