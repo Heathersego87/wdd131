@@ -8,17 +8,14 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap" 
-        rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="styles/main.css">
-
-  <!-- Meta -->
+  <link rel="stylesheet" href="styles/main.css" />
   <meta name="description" content="The Music Mogul – Fun, beginner-friendly piano lessons for kids, teens, and homeschool families. Learn piano through colorful visuals, tips, and interactive tools.">
   <meta name="theme-color" content="#FF6EC7">
-
-  <!-- Favicon -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/png" href="images/icons/favicon-124.png">
 </head>
 
@@ -27,9 +24,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo-area">
-      <img src="images/music-logo.png" 
-           alt="Music Mogul Logo" 
-           width="140" height="140">
+      <img src="images/music-logo.png" alt="Music Mogul Logo" width="140" height="140">
       <h1><a href="index.html">The Music Mogul</a></h1>
     </div>
 
@@ -79,13 +74,13 @@
     </div>
   </section>
 
-  <!-- PRACTICE TRACKER -->
+  <!-- PRACTICE TRACKER (JS FEATURE) -->
   <section class="tracker">
     <h2>Practice Tracker</h2>
     <p id="practice-display">You've practiced <strong>0</strong> minutes today!</p>
 
-    <button id="add-5">Add 5 Minutes</button>
-    <button id="reset">Reset</button>
+    <button id="add-5" aria-label="Add five minutes">Add 5 Minutes</button>
+    <button id="reset" aria-label="Reset practice time">Reset</button>
   </section>
 
   <!-- FOOTER -->
@@ -95,6 +90,5 @@
 
   <!-- JS -->
   <script type="module" src="scripts/main.js"></script>
-
 </body>
 </html>
