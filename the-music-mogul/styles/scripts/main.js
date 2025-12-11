@@ -1,6 +1,7 @@
 // ======================================
 // PRACTICE TRACKER SCRIPT
 // ======================================
+console.log("MAIN.JS IS LOADED!!!");
 
 // User stats object (Required for assignment)
 const userStats = {
