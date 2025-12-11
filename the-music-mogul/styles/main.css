@@ -266,6 +266,7 @@ footer p {
   box-shadow: 0 0 15px rgba(255, 110, 199, 0.25);
   display: block;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .lesson-list {
