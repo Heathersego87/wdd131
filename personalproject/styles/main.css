@@ -15,6 +15,11 @@ body {
   line-height: 1.6;
 }
 
+/* Paragraphs and general text LEFT aligned */
+p, li {
+  text-align: left;
+}
+
 /* ================================
    HEADER
 =================================== */
@@ -25,6 +30,7 @@ header {
   color: white;
 }
 
+/* Logo area centered */
 .logo-area {
   display: flex;
   align-items: center;
@@ -40,10 +46,10 @@ header img {
 header h1 {
   font-family: 'Fredoka One', cursive;
   font-size: 2rem;
+  text-align: center;
 }
 
 /* NAVIGATION */
-
 nav {
   margin-top: 1rem;
 }
@@ -76,7 +82,6 @@ nav {
 =================================== */
 
 .hero {
-  text-align: center;
   padding: 4rem 1rem;
   max-width: 900px;
   margin: 0 auto;
@@ -86,12 +91,14 @@ nav {
   font-family: 'Fredoka One', cursive;
   font-size: 2.5rem;
   color: #FF6EC7;
+  text-align: center;
 }
 
 .hero p {
   max-width: 600px;
   margin: 1rem auto 2rem;
   font-size: 1.2rem;
+  text-align: left; /* per professor */
 }
 
 .cta-btn {
@@ -116,13 +123,13 @@ nav {
 
 .features {
   padding: 3rem 1rem;
-  text-align: center;
 }
 
 .features h2 {
   font-family: 'Fredoka One', cursive;
   color: #4DA6FF;
   margin-bottom: 2rem;
+  text-align: center; /* headings centered */
 }
 
 .feature-grid {
@@ -146,6 +153,7 @@ nav {
 .feature-box h3 {
   color: #FF6EC7;
   margin: 0.5rem 0;
+  text-align: center; /* headings allowed */
 }
 
 .feature-box:hover {
@@ -158,23 +166,25 @@ nav {
 =================================== */
 
 .tracker {
-  text-align: center;
   padding: 3rem 1rem;
   background-color: #FFE3F8;
   margin-top: 3rem;
   border-top: 4px solid #FF6EC7;
   border-bottom: 4px solid #FF6EC7;
+  text-align: center;
 }
 
 .tracker h2 {
   font-family: 'Fredoka One', cursive;
   color: #FF6EC7;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 #practice-display {
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
+  text-align: center; /* per professor */
 }
 
 button {
@@ -198,16 +208,17 @@ button:hover {
    FOOTER
 =================================== */
 
-footer {
-  text-align: center;
+footer p{
   padding: 2rem;
   background-color: #1E90FF;
   color: white;
   margin-top: 3rem;
   font-size: 1rem;
+  text-align: center;
 }
+
 /* ================================
-   LESSONS PAGE STYLING
+   LESSONS PAGE
 =================================== */
 
 .lesson-wrapper {
@@ -216,32 +227,34 @@ footer {
   padding: 2rem 1rem;
 }
 
-.lesson-intro {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
 .lesson-intro h2 {
   font-family: 'Fredoka One', cursive;
   color: #1E90FF;
   font-size: 2.2rem;
   margin-bottom: 1rem;
+  text-align: center; /* headings allowed */
+}
+
+.lesson-intro {
+  text-align: left;  /* makes the whole section left-aligned */
 }
 
 .lesson-intro p {
   font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
+  text-align: left;                 /* left-align text */
+  max-width: 700px;                 /* same width as image */
+  margin: 1rem auto 1.5rem auto;    /* center the block */
 }
 
 .lesson-intro img {
-  width: 95%;
+  width: 100%;
   max-width: 700px;
   border-radius: 20px;
   border: 4px solid #FF6EC7;
   box-shadow: 0 0 15px rgba(255, 110, 199, 0.25);
+  display: block;
+  margin: 0 auto;
 }
-
 /* LESSON LIST */
 .lesson-list {
   background: #ffffff;
@@ -254,13 +267,12 @@ footer {
 .lesson-list h3 {
   font-family: 'Fredoka One', cursive;
   color: #7ED957;
+  text-align: center; /* headings allowed */
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .lesson-list ul {
   list-style: none;
-  padding: 0;
 }
 
 .lesson-list li {
@@ -269,12 +281,20 @@ footer {
   padding: 1rem;
   border-radius: 15px;
   margin: 0.8rem 0;
+  text-align: left; /* per professor */
 }
+
+/* Focus Styles */
 a:focus,
 button:focus {
   outline: 3px solid #1E90FF;
   outline-offset: 4px;
 }
+
+/* ================================
+   MOBILE RESPONSIVE
+=================================== */
+
 @media (max-width: 500px) {
   header img {
     width: 90px;
@@ -288,4 +308,18 @@ button:focus {
     font-size: 1rem;
     padding: 0.6rem 1.5rem;
   }
+}
+.cta-btn {
+  display: block;
+  margin: 2rem auto 0 auto;
+  text-align: center;
+}
+header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+header h1 a:hover {
+  opacity: 0.85;
+  color: #7ED957;
 }
