@@ -321,3 +321,13 @@ button:focus {
     padding: 0.6rem 1.5rem;
   }
 }
+/* Match lessons hero image styling on index */
+.hero img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 20px;
+  border: 4px solid #ff5abf;
+  box-shadow: 0 0 15px rgba(255, 110, 199, 0.25);
+  display: block;
+  margin: 0 auto;
+}
