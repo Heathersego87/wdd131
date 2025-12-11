@@ -1,6 +1,7 @@
 console.log("✔ lessons.js loaded");
+
 // =========================================
-// RANDOM LESSON TIP GENERATOR
+// RANDOM PRACTICE TIP GENERATOR
 // =========================================
 
 // Array of piano practice tips
@@ -17,29 +18,31 @@ const tips = [
   "Smile—you learn faster when you're relaxed!"
 ];
 
-// DOM references for tips
+// DOM elements
 const tipBtn = document.getElementById("tip-btn");
 const tipDisplay = document.getElementById("tip-display");
 
-// Show a random tip on button click
-tipBtn.addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * tips.length);
-  const randomTip = tips[randomIndex];
+// Make sure elements exist
+if (tipBtn && tipDisplay) {
+  tipBtn.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * tips.length);
+    const randomTip = tips[randomIndex];
 
-  tipDisplay.textContent = randomTip;
+    tipDisplay.textContent = randomTip;
 
-  // Conditional styling based on tip length
-  if (randomTip.length > 45) {
-    tipDisplay.style.color = "#FF6EC7"; // pink
-  } else {
-    tipDisplay.style.color = "#4A90E2"; // blue
-  }
-});
+    // Conditional color styling
+    tipDisplay.style.color =
+      randomTip.length > 45 ? "#FF6EC7" : "#4A90E2";
+  });
+} else {
+  console.warn("Tip generator elements missing from the page.");
+}
+
 // =========================================
-// LESSON FILTER FEATURE (Easy Lessons Only)
+// EASY LESSON FILTER FEATURE
 // =========================================
 
-// Array of lesson objects
+// Lesson objects
 const lessons = [
   { name: "Meet the Keyboard", level: "easy" },
   { name: "Finger Numbers", level: "easy" },
@@ -49,21 +52,28 @@ const lessons = [
   { name: "Simple Song Challenge", level: "hard" }
 ];
 
-// Filter button reference
+// DOM elements
 const showEasyBtn = document.getElementById("show-easy");
 const lessonOutput = document.getElementById("lesson-output");
 
-// Show easy lessons when button is clicked
-showEasyBtn.addEventListener("click", () => {
-  const easyLessons = lessons.filter(l => l.level === "easy");
+// Make sure elements exist
+if (showEasyBtn && lessonOutput) {
+  showEasyBtn.addEventListener("click", () => {
 
-  // Clear previous results
-  lessonOutput.innerHTML = "";
+    // Filter only easy lessons
+    const easyLessons = lessons.filter(lesson => lesson.level === "easy");
 
-  // Add each easy lesson to list
-  easyLessons.forEach(lesson => {
-    const li = document.createElement("li");
-    li.textContent = lesson.name;
-    lessonOutput.appendChild(li);
+    // Clear previous output
+    lessonOutput.innerHTML = "";
+
+    // Add filtered lessons
+    easyLessons.forEach(lesson => {
+      const li = document.createElement("li");
+      li.textContent = lesson.name;
+      lessonOutput.appendChild(li);
+    });
+
   });
-});
+} else {
+  console.warn("Lesson filter elements missing from the page.");
+}
