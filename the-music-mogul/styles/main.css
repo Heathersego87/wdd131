@@ -114,7 +114,7 @@ nav {
 .cta-btn {
   display: block;
   margin: 2rem auto 0;
-  background-color: #ff5abf;
+  background-color: #d61a88;
   color: #ffffff;
   padding: 0.8rem 2rem;
   font-size: 1.2rem;
@@ -316,15 +316,9 @@ button:focus {
   .hero h2 {
     font-size: 2rem;
   }
-
-  .cta-btn {
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
-    background-color: #ff5abf;
-    color: #ffffff;
-  }
 }
-/* Match lessons hero image styling on index */
+
+/* HERO IMAGE */
 .hero img {
   width: 100%;
   max-width: 700px;
@@ -333,4 +327,5 @@ button:focus {
   box-shadow: 0 0 15px rgba(255, 110, 199, 0.25);
   display: block;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
