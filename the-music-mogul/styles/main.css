@@ -270,7 +270,7 @@ footer p {
 }
 
 .lesson-list {
-  background: #ffffff;
+  background: #fdf8ff;
   padding: 2rem;
   border-radius: 20px;
   border: 3px solid #7ED957;
@@ -279,7 +279,7 @@ footer p {
 
 .lesson-list h3 {
   font-family: 'Fredoka One', cursive;
-  color: #7ED957;
+  color: #2f8a1f; 
   text-align: center;
   margin-bottom: 1rem;
 }
