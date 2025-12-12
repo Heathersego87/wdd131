@@ -320,8 +320,8 @@ button:focus {
   .cta-btn {
     font-size: 1rem;
     padding: 0.6rem 1.5rem;
-      background-color: #d61a88;
-  color: #ffffff;
+    background-color: #ff5abf;
+    color: #ffffff;
   }
 }
 /* Match lessons hero image styling on index */
